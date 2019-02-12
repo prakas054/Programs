@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+  <display-name>SaskenProject01</display-name>
+  <welcome-file-list>
+    <welcome-file>Login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>LC</servlet-name>
+    <servlet-class>com.prakash.program.LoginPage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LC</servlet-name>
+    <url-pattern>/login.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>re</servlet-name>
+    <servlet-class>com.prakash.program.Registration</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>re</servlet-name>
+    <url-pattern>/reg.do</url-pattern>
+  </servlet-mapping>
+ 
+</web-app>

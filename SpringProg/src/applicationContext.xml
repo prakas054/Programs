@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+               
+<bean id="studentbean" class="com.prakash.Spring.Student">  
+<property name="name" value="Vimal Jaiswal"></property>  
+</bean>
+
+<!-- ___________________Setter Injection with Dependent Object Example___________________________ -->
+                 
+<bean id="address1" class="com.prakash.SetterInjection.Address">  
+<property name="addressLine1" value="51,Lohianagar"></property>  
+<property name="city" value="Ghaziabad"></property>  
+<property name="state" value="utterPradesh"></property>  
+<property name="country" value="India"></property>  
+</bean>  
+  
+<bean id="obj" class="com.prakash.SetterInjection.Employee">  
+<property name="id" value="1"></property>  
+<property name="name" value="Sachin Yadav"></property>  
+<property name="address" ref="address1"></property>  
+</bean>  
+
+<!-- ______________________Constructor Injection with Dependent Object______________________________ -->
+
+<bean id="a1" class="com.prakash.CI_DependentObject.Address">  
+<constructor-arg value="ghaziabad"></constructor-arg>  
+<constructor-arg value="UP"></constructor-arg>  
+<constructor-arg value="India"></constructor-arg>  
+</bean>  
+  
+  
+<bean id="e" class="com.prakash.CI_DependentObject.Employee">  
+<constructor-arg value="12" type="int"></constructor-arg>  
+<constructor-arg value="Sonoo"></constructor-arg>  
+<constructor-arg>  
+<ref bean="a1"/>  
+</constructor-arg>  
+</bean>
+  
+</beans>  
